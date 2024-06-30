@@ -1,0 +1,75 @@
+### USER REGISTRATION API
+POST http://localhost:3000/users/
+Content-Type: application/json
+
+{
+  "username": "christopher_phillips",
+  "name": "Christopher Phillips",
+  "password": "christy@123",
+  "gender": "male",
+  "location": "Texas"
+}
+
+### USER LOGIN API
+POST http://localhost:3000/login/
+Content-Type: application/json
+
+{
+  "username": "christopher_phillips",
+  "password": "christy@123"
+}
+
+
+### Returns a list of all states in the state table API
+GET http://localhost:3000/states/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzdG9waGVyX3BoaWxsaXBzIiwiaWF0IjoxNzE5NzQ4MTI1fQ.ZMtnBT1VdAG1ndzlb3S3h73EDbd3dJRtJAX8Eh6VScY
+
+
+### Returns a state based on the state ID API
+GET http://localhost:3000/states/8/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzdG9waGVyX3BoaWxsaXBzIiwiaWF0IjoxNzE5NzQ4MTI1fQ.ZMtnBT1VdAG1ndzlb3S3h73EDbd3dJRtJAX8Eh6VScY
+
+
+### Create a district in the district table API 
+POST http://localhost:3000/districts/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzdG9waGVyX3BoaWxsaXBzIiwiaWF0IjoxNzE5NzQ4MTI1fQ.ZMtnBT1VdAG1ndzlb3S3h73EDbd3dJRtJAX8Eh6VScY
+
+{
+  "districtName": "Bagalkot",
+  "stateId": 3,
+  "cases": 2323,
+  "cured": 2000,
+  "active": 315,
+  "deaths": 8
+}
+
+
+### Returns a district based on the district ID API
+GET http://localhost:3000/districts/4/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzdG9waGVyX3BoaWxsaXBzIiwiaWF0IjoxNzE5NzQ4MTI1fQ.ZMtnBT1VdAG1ndzlb3S3h73EDbd3dJRtJAX8Eh6VScY
+
+
+### Deletes a district from the district table based on the district ID API
+DELETE http://localhost:3000/districts/5/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzdG9waGVyX3BoaWxsaXBzIiwiaWF0IjoxNzE5NzQ4MTI1fQ.ZMtnBT1VdAG1ndzlb3S3h73EDbd3dJRtJAX8Eh6VScY
+
+
+### Updates the details of a specific district based on the district ID API
+PUT http://localhost:3000/districts/755/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzdG9waGVyX3BoaWxsaXBzIiwiaWF0IjoxNzE5NzQ4MTI1fQ.ZMtnBT1VdAG1ndzlb3S3h73EDbd3dJRtJAX8Eh6VScY
+
+{
+  "districtName": "Nadia",
+  "stateId": 3,
+  "cases": 9628,
+  "cured": 6524,
+  "active": 3000,
+  "deaths": 104
+}
+
+### Returns the statistics of total cases, cured, active, deaths of a specific state based on state ID API
+GET http://localhost:3000/states/2/stats/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzdG9waGVyX3BoaWxsaXBzIiwiaWF0IjoxNzE5NzQ4MTI1fQ.ZMtnBT1VdAG1ndzlb3S3h73EDbd3dJRtJAX8Eh6VScY
+
